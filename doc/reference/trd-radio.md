@@ -36,11 +36,11 @@ a flexible and efficient link layer for many applications and uses.
 This document describes Tock's HIL for an 802.15.4 radio. The HIL is 
 in the kernel create, in model hil::radio. It provides four traits:
 
-  * kernel::hil::radio::RadioControl: turn the radio on/off and configure it 
-  * kernel::hil::radio::Radio: send, receive and access packets
-  * kernel::hil::radio::TxClient: handles callback when transmission completes
-  * kernel::hil::radio::RxClient: handles callback when packet received 
-  * kernel::hil::radio::ConfigClient: handles callback when configuration
+  * `kernel::hil::radio::RadioControl`: turn the radio on/off and configure it 
+  * `kernel::hil::radio::Radio`: send, receive and access packets
+  * `kernel::hil::radio::TxClient`: handles callback when transmission completes
+  * `kernel::hil::radio::RxClient`: handles callback when packet received 
+  * `kernel::hil::radio::ConfigClient`: handles callback when configuration
     changed
 
 The rest of this document discusses each in turn.
@@ -58,11 +58,11 @@ of this layout for the RF233 radio.
 
 Following this approach, The Radio HIL defines 4 constants:
 
-  * kernel::hil::radio::HEADER_SIZE: the size of an 802.15.4 header,
-  * kernel::hil::radio::MAX_PACKET_SIZE: the maximum frame size,
-  * kernel::hil::radio::MAX_BUF_SIZE: the size buffer that must be 
+  * `kernel::hil::radio::HEADER_SIZE`: the size of an 802.15.4 header,
+  * `kernel::hil::radio::MAX_PACKET_SIZE`: the maximum frame size,
+  * `kernel::hil::radio::MAX_BUF_SIZE`: the size buffer that must be 
     provided to the radio, and
-  * kernel::hil::radio::MIN_PACKET_SIZE: the smallest frame that can
+  * `kernel::hil::radio::MIN_PACKET_SIZE`: the smallest frame that can
     be received (typically HEADER_SIZE + 2 for an error-detecting CRC).
 
 Note that MAX_BUF_SIZE can be larger (but not smaller) than MAX_PACKET_SIZE.
